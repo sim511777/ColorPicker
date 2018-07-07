@@ -33,9 +33,9 @@ namespace ColorPicker {
          // draw capture
          var gfxCap = this.pbxCap.CreateGraphics();
          gfxCap.InterpolationMode = InterpolationMode.NearestNeighbor;
-         gfxCap.FillRectangle(Brushes.Black, this.pbxCap.DisplayRectangle);
-         gfxCap.DrawImage(bmp, this.pbxCap.ClientRectangle);
-         gfxCap.DrawRectangle(Pens.Black, this.pbxCap.ClientRectangle);
+         gfxCap.FillRectangle(Brushes.Gray, this.pbxCap.DisplayRectangle);
+         gfxCap.DrawImage(bmp, this.pbxCap.DisplayRectangle);
+         gfxCap.DrawRectangle(Pens.Black, this.pbxCap.DisplayRectangle);
          
          // draw color rectangle
          var brColor = new SolidBrush(pickColor);
