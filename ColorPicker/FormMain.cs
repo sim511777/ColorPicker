@@ -76,7 +76,7 @@ namespace ColorPicker {
          if (Control.MouseButtons != MouseButtons.Left)
             return;
 
-         this.CaptureScreen(this.pbxCap.PointToScreen(e.Location));
+         this.CaptureScreen(Cursor.Position);
          this.GetColor();
          this.pbxCap.Refresh();
          this.DisplayColorValue();
