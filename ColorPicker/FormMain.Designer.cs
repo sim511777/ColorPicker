@@ -24,67 +24,64 @@
       /// </summary>
       private void InitializeComponent() {
          this.pbxCap = new System.Windows.Forms.PictureBox();
-         this.tbxHex = new System.Windows.Forms.TextBox();
+         this.label1 = new System.Windows.Forms.Label();
          this.tbxRgb = new System.Windows.Forms.TextBox();
          this.label2 = new System.Windows.Forms.Label();
-         this.label1 = new System.Windows.Forms.Label();
+         this.tbxHtml = new System.Windows.Forms.TextBox();
          ((System.ComponentModel.ISupportInitialize)(this.pbxCap)).BeginInit();
          this.SuspendLayout();
          // 
          // pbxCap
          // 
-         this.pbxCap.BackColor = System.Drawing.Color.Black;
+         this.pbxCap.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
          this.pbxCap.Location = new System.Drawing.Point(12, 12);
          this.pbxCap.Name = "pbxCap";
-         this.pbxCap.Size = new System.Drawing.Size(256, 256);
+         this.pbxCap.Size = new System.Drawing.Size(255, 255);
          this.pbxCap.TabIndex = 0;
          this.pbxCap.TabStop = false;
+         this.pbxCap.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCap_Paint);
          this.pbxCap.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbxCap_MouseMove);
          // 
-         // tbxHex
+         // label1
          // 
-         this.tbxHex.BackColor = System.Drawing.SystemColors.Window;
-         this.tbxHex.Location = new System.Drawing.Point(198, 274);
-         this.tbxHex.Name = "tbxHex";
-         this.tbxHex.ReadOnly = true;
-         this.tbxHex.Size = new System.Drawing.Size(70, 21);
-         this.tbxHex.TabIndex = 2;
+         this.label1.AutoSize = true;
+         this.label1.Location = new System.Drawing.Point(10, 276);
+         this.label1.Name = "label1";
+         this.label1.Size = new System.Drawing.Size(34, 12);
+         this.label1.TabIndex = 1;
+         this.label1.Text = "RGB:";
          // 
          // tbxRgb
          // 
-         this.tbxRgb.BackColor = System.Drawing.SystemColors.Window;
-         this.tbxRgb.Location = new System.Drawing.Point(53, 274);
+         this.tbxRgb.Location = new System.Drawing.Point(50, 273);
          this.tbxRgb.Name = "tbxRgb";
-         this.tbxRgb.ReadOnly = true;
-         this.tbxRgb.Size = new System.Drawing.Size(90, 21);
+         this.tbxRgb.Size = new System.Drawing.Size(86, 21);
          this.tbxRgb.TabIndex = 2;
          // 
          // label2
          // 
          this.label2.AutoSize = true;
-         this.label2.Location = new System.Drawing.Point(149, 277);
+         this.label2.Location = new System.Drawing.Point(142, 276);
          this.label2.Name = "label2";
          this.label2.Size = new System.Drawing.Size(43, 12);
          this.label2.TabIndex = 1;
          this.label2.Text = "HTML:";
          // 
-         // label1
+         // tbxHtml
          // 
-         this.label1.AutoSize = true;
-         this.label1.Location = new System.Drawing.Point(13, 277);
-         this.label1.Name = "label1";
-         this.label1.Size = new System.Drawing.Size(34, 12);
-         this.label1.TabIndex = 1;
-         this.label1.Text = "RGB:";
+         this.tbxHtml.Location = new System.Drawing.Point(191, 273);
+         this.tbxHtml.Name = "tbxHtml";
+         this.tbxHtml.Size = new System.Drawing.Size(76, 21);
+         this.tbxHtml.TabIndex = 2;
          // 
          // FormMain
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(280, 303);
-         this.Controls.Add(this.tbxRgb);
+         this.Controls.Add(this.tbxHtml);
          this.Controls.Add(this.label2);
-         this.Controls.Add(this.tbxHex);
+         this.Controls.Add(this.tbxRgb);
          this.Controls.Add(this.label1);
          this.Controls.Add(this.pbxCap);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -101,10 +98,10 @@
       #endregion
 
       private System.Windows.Forms.PictureBox pbxCap;
-      private System.Windows.Forms.TextBox tbxHex;
+      private System.Windows.Forms.Label label1;
       private System.Windows.Forms.TextBox tbxRgb;
       private System.Windows.Forms.Label label2;
-      private System.Windows.Forms.Label label1;
+      private System.Windows.Forms.TextBox tbxHtml;
    }
 }
 
