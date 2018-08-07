@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs/ColorPicker
+/ColorPicker/bin/Debug
+/ColorPicker/obj/Debug
