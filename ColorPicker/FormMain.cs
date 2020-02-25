@@ -1,5 +1,8 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 // crosshair blending
@@ -80,6 +83,14 @@ namespace ColorPicker {
             this.GetColor();
             this.pbxCap.Refresh();
             this.DisplayColorValue();
+            this.GetNamedColor();
+        }
+
+        private void GetNamedColor() {
+            var namedColors = typeof(Color).GetProperties(BindingFlags.Public | BindingFlags.Static).Select(pinfo => pinfo.GetValue(null)).Cast<Color>();
+            var simillarColor = namedColors.OrderBy(namedColor => Math.Sqrt(Math.Pow((namedColor.R - colPick.R), 2) + Math.Pow((namedColor.G - colPick.G), 2) + Math.Pow((namedColor.B - colPick.B), 2))).First();
+            lblNamedColorDisp.BackColor = simillarColor;
+            lblNamedColor.Text = simillarColor.Name;
         }
 
         private void pbxCap_Paint(object sender, PaintEventArgs e) {
